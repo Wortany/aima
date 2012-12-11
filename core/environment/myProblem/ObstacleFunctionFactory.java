@@ -138,7 +138,7 @@ public class ObstacleFunctionFactory {
             } else if(ObstacleBoard.NORTHWEST.equals(action)) {
                 return diagonalCost;
             }
-            return horizontalVerticalCost;
+            return 0;
 	}
     }
 }

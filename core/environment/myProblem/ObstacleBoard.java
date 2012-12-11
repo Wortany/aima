@@ -229,20 +229,18 @@ public class ObstacleBoard {
             return false;
 	}
 	ObstacleBoard aBoard = (ObstacleBoard) o;
-        for (int i = 0; i < board.length; i++) {
-            for(int j = 0; j < board[0].length; j++) {
-                if (this.getValueAt(j, j) != aBoard.getValueAt(i,j)) {
-                    return false;
-                }
-            }
-	}
-	return true;
+        int[] posThis = getAgentPosition();
+        int[] posThat = aBoard.getAgentPosition();
+        if(posThis[0] == posThat[0] && posThis[1] == posThat[1])  {
+            return true;
+        }
+        return false;
     }
     
     @Override
     public int hashCode() {
         int[] pos = getAgentPosition();
-        int result = pos[0]*17 + pos[1]*6047;
+        int result = pos[0]*52673 + pos[1]*6047;
 	return result;
     }
 
